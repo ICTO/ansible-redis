@@ -1,0 +1,3 @@
+---
+- name: "Restart Redis"
+  service: name=${redis.service} state=restarted

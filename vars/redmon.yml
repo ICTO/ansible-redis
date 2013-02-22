@@ -1,0 +1,10 @@
+---
+redmon:
+  service: 'redmon'
+  dependencies:
+    - 'git'
+    - 'rubygems'
+    - 'g++'
+  gems:
+    - 'bundler'
+    - 'redmon'

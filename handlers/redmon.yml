@@ -1,0 +1,3 @@
+---
+- name: "Restart Redmon"
+  service: name=${redmon.service} state=restarted

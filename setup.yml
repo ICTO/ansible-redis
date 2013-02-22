@@ -1,0 +1,16 @@
+---
+- hosts: $hosts
+  user: $user
+  sudo: yes
+  sudo_user: root
+
+  vars_files:
+    - vars/redis.yml
+    - vars/redmon.yml
+
+  tasks:
+    - include: tasks/setup.yml
+
+  handlers:
+    - include: handlers/redis.yml
+    - include: handlers/redmon.yml

@@ -1,0 +1,16 @@
+---
+# Check if gem is already installed
+- name: "Check if ${item} is installed"
+  command: gem list ${item} -i
+  ignore_errors: True
+  register: gem_installed
+  when_boolean: ${with_redmon}
+  tags:
+    - redmon
+
+# Install gem
+- name: "Install gem: ${item}"
+  command: gem install ${item}
+  only_if: "${with_redmon} and '${gem_installed.stdout}' == 'false'"
+  tags:
+    - redmon

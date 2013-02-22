@@ -1,0 +1,4 @@
+---
+redis:
+  package: 'redis-server'
+  service: 'redis-server'
