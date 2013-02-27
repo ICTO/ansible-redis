@@ -5,6 +5,12 @@
   tags:
     - redis
 
+# Bind Redis server to all interfaces
+- name: "Bind Redis server to all interfaces"
+  lineinfile: dest=/etc/redis/redis.conf state=present regexp="^#?bind" line="#bind 127.0.0.1"
+  tags:
+    - redis
+
 # Ensure Redis server is running
 - name: "Ensure Redis server is running"
   service: name=${redis.package} state=started
