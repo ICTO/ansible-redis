@@ -8,6 +8,8 @@
 # Bind Redis server to all interfaces
 - name: "Bind Redis server to all interfaces"
   lineinfile: dest=/etc/redis/redis.conf state=present regexp="^#?bind" line="#bind 127.0.0.1"
+  notify:
+    - "Restart Redis"
   tags:
     - redis
 
