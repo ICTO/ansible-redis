@@ -39,7 +39,7 @@ $ git clone git@github.com:ICTO/ansible-redis.git
 Use *ansible.host* as inventory. Run the playbook only for the remote host *redis*. Use *vagrant* as the SSH user to connect to the remote host. *-k* enables the SSH password prompt.
 
 ```bash
-$ ansible-playbook -k -i ansible.host redis --extra-vars="user=vagrant"
+$ ansible-playbook -k -i ansible.host redis.yml -u vagrant
 ```
 
 ### Example output
