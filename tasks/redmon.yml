@@ -10,7 +10,7 @@
 # Install Redmon gems
 - name: "Install Redmon gems"
   sudo: yes
-  action: gem name={{ item }} state=present #executable=/usr/bin/gem
+  action: gem name={{ item }} state=present user_install=no #executable=/usr/bin/gem1.9.1
   with_items: redmon.gems
 
 # Install Redmon init script

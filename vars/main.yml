@@ -15,4 +15,4 @@ redmon:
   gems:
     - 'bundler'
     - 'redmon'
-  bin: '/var/lib/gems/1.9.1/gems/redmon-0.0.8/redmon'
+  bin: '/usr/local/bin/redmon'
