@@ -18,7 +18,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Redmon dashboard"
 NAME={{ redmon.service }}
-DAEMON=/usr/bin/$NAME
+DAEMON={{ redmon.bin }}
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME

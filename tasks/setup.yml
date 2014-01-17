@@ -1,6 +1,0 @@
----
-# Install Redis
-- include: tasks/redis.yml
-
-# Install Redmon dashboard
-- include: tasks/redmon.yml
