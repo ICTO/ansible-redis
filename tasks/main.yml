@@ -1,8 +1,10 @@
 ---
 # Install Redis
 - include: redis_deb.yml tags=redis
+  sudo: yes
   when: ansible_distribution in [ 'Debian', 'Ubuntu' ]
 
 # Install Redmon dashboard
 - include: redmon.yml tags=redis
+  sudo: yes
   when: with_redmon

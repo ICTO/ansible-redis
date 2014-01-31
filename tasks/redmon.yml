@@ -1,7 +1,6 @@
 ---
 # Install Redmon dependencies
 - name: "Install Redmon dependencies"
-  sudo: yes
   action: ${ansible_pkg_mgr} pkg={{ item }} state=installed update-cache=yes
   with_items: redmon.deb.dependencies
   when: ansible_distribution in [ 'Debian', 'Ubuntu' ]
@@ -9,16 +8,13 @@
 
 # Install Redmon gems
 - name: "Install Redmon gems"
-  sudo: yes
   action: gem name={{ item }} state=present user_install=no #executable=/usr/bin/gem1.9.1
   with_items: redmon.gems
 
 # Install Redmon init script
 - name: "Install Redmon init script"
-  sudo: yes
   template: src=redmon.j2 dest=/etc/init.d/{{ redmon.service }} owner=root group=root mode=0755
 
 # Ensure Redmon is running
 - name: "Ensure Redis server is running"
-  sudo: yes
   action: service name={{ redmon.service }} state=started
